@@ -1,7 +1,6 @@
 import { FETCH_START, FETCH_SUCCESS, FETCH_FAIL } from './../actions/index';
 
 const initialState = {
-    // dogs: [],
     dogs: '',
     err: ''
 }

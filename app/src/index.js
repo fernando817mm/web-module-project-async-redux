@@ -8,14 +8,19 @@ import { Provider } from 'react-redux';
 import { reducer } from './reducers';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
+import { ThemeProvider } from 'styled-components';
+import { theme } from './theme';
+import './App.css'
 
 const store = createStore(reducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <ThemeProvider theme={theme}>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

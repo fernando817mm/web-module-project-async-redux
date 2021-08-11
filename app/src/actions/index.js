@@ -7,8 +7,7 @@ export const FETCH_FAIL = 'FETCH_FAIL';
 
 export const getDogs = () => {
     return (dispatch) => {
-        dispatch(fetchStart());
-        // axios.get('https://dog.ceo/api/breed/pyrenees/images')
+        // dispatch(fetchStart()); // <-- this would only be needed if my initial state was already set to something
         axios.get('https://dog.ceo/api/breeds/image/random')
             .then(res => {
                 dispatch(fetchSuccess(res.data.message));
